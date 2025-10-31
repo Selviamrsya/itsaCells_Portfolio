@@ -1,0 +1,3 @@
+- [ ] Remove unused contactAssets definition in About.jsx
+- [ ] Change profile picture column span from md:col-span-3 to md:col-span-2
+- [ ] Remove extra + in contact button JSX
