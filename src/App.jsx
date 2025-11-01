@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./components/sections/Home";
 import ProjectPage from "./components/sections/Project";
 import Overview from "./components/sections/Overview";  
@@ -11,11 +11,11 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       {!isLoaded && <LoadingScene onComplete={() => setIsLoaded(true)} />}
 
       <div
-        className={`min-h-screen transition-opacity duration-700 ${
+        className={`scale-component min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -29,6 +29,6 @@ export default function App() {
           </Routes>
         )}
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

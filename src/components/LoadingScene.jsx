@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "/assets/buttons/logo.png";
 
 export const LoadingScene = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);

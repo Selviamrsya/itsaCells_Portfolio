@@ -1,20 +1,52 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { projects } from "./data";
-import closeBtn from "../../assets/close-button.png";
-import closeBtnHover from "../../assets/close-hover.png";
-import overviewBtn from "../../assets/menu.png";
-import overviewHoverBtn from "../../assets/menu-hover.png";
-import leftArrow from "../../assets/arrow-left.png";
-import leftArrowHover from "../../assets/arrow-left-hover.png";
-import rightArrow from "../../assets/arrow-right.png";
-import rightArrowHover from "../../assets/arrow-right-hover.png";
-import bookCover from "../../assets/book-frame.png";
-import fallingFlower from "../../assets/flower.png";
-import bgImage from "../../assets/background/Background-2.png";
-import seeMore from "../../assets/see-more-button.png";
-import seeMoreHover from "../../assets/see-more-button-hover.png";
-import logo from "../../assets/logo.png";
+import closeBtn from "/assets/buttons/close-button.png";
+import closeBtnHover from "/assets/buttons/close-hover.png";
+import overviewBtn from "/assets/buttons/menu.png";
+import overviewHoverBtn from "/assets/buttons/menu-hover.png";
+import leftArrow from "/assets/buttons/arrow-left.png";
+import leftArrowHover from "/assets/buttons/arrow-left-hover.png";
+import rightArrow from "/assets/buttons/arrow-right.png";
+import rightArrowHover from "/assets/buttons/arrow-right-hover.png";
+import bookCover from "/assets/book-frame.png";
+import fallingFlower from "/assets/buttons/flower.png";
+import bgImage from "/assets/background/Background-2.png";
+import seeMore from "/assets/buttons/see-more-button.png";
+import seeMoreHover from "/assets/buttons/see-more-button-hover.png";
+import logo from "/assets/buttons/logo.png";
+
+import htmlIcon from "/assets/tools/html.png";
+import htmlHoverIcon from "/assets/tools/html-hover.png";
+import cssIcon from "/assets/tools/css.png";
+import cssHoverIcon from "/assets/tools/css-hover.png";
+import jsIcon from "/assets/tools/js.png";
+import jsHoverIcon from "/assets/tools/js-hover.png";
+import pythonIcon from "/assets/tools/python.png";
+import pythonHoverIcon from "/assets/tools/python-hover.png";
+import javaIcon from "/assets/tools/java.png";
+import javaHoverIcon from "/assets/tools/java-hover.png";
+import mysqlIcon from "/assets/tools/mysql.png";
+import mysqlHoverIcon from "/assets/tools/mysql-hover.png";
+import figmaIcon from "/assets/tools/figma.png";
+import figmaHoverIcon from "/assets/tools/figma-hover.png";
+import canvaIcon from "/assets/tools/canva.png";
+import canvaHoverIcon from "/assets/tools/canva-hover.png";
+import cIcon from "/assets/tools/c.png";
+import cHoverIcon from "/assets/tools/c-hover.png";
+
+const toolsMap = {
+  "HTML": { icon: htmlIcon, hover: htmlHoverIcon },
+  "CSS": { icon: cssIcon, hover: cssHoverIcon },
+  "JS": { icon: jsIcon, hover: jsHoverIcon },
+  "JavaScript": { icon: jsIcon, hover: jsHoverIcon },
+  "Python": { icon: pythonIcon, hover: pythonHoverIcon },
+  "Java": { icon: javaIcon, hover: javaHoverIcon },
+  "MySQL": { icon: mysqlIcon, hover: mysqlHoverIcon },
+  "Figma": { icon: figmaIcon, hover: figmaHoverIcon },
+  "Canva": { icon: canvaIcon, hover: canvaHoverIcon },
+  "C": { icon: cIcon, hover: cHoverIcon }
+};
 
 export default function ProjectPage() {
   const navigate = useNavigate();
@@ -78,7 +110,7 @@ export default function ProjectPage() {
               left: pos.left,
               animationDelay: pos.delay,
               animationDuration: pos.duration,
-              width: `35px`,
+              width: `25px`,
               opacity: 0, 
               '--horizontal-offset': pos.horizontalOffset,
             }}
@@ -89,16 +121,16 @@ export default function ProjectPage() {
       <img
         src={logo}
         alt="logo"
-        className=" hover:scale-105 absolute top-8 right-8 w-40 transition-transform z-30"
+        className="hover:scale-110 absolute top-2 right-4 md:top-8 md:right-8 w-24 md:w-40 transition-transform z-30"
       />
         
       <img
         src={bookCover}
         alt="book cover"
-        className="absolute w-[100vw] max-w-[1600px] h-[100vh] max-h-[1500px] object-contain opacity-95 drop-shadow-2xl z-20"
+        className="absolute w-0 md:w-[100vw] md:max-w-[1200px] md:h-[95vh] md:max-h-[950px] object-contain drop-shadow-2xl z-20"
       />
 
-      <div className="absolute top-4 md:top-6 left-4 md:left-6 z-50 flex gap-2 md:gap-3">
+      <div className="absolute top-4 md:top-6 left-4 md:left-6 z-50 flex md:gap-2">
         <button
           onClick={() => navigate("/")}
           onMouseEnter={() => setIsCloseHovered(true)}
@@ -107,7 +139,7 @@ export default function ProjectPage() {
           <img 
             src={isCloseHovered ? closeBtnHover : closeBtn} 
             alt="close" 
-            className="w-12 h-12 md:w-14 md:h-14 lg:w-18 lg:h-18 object-contain drop-shadow-2xl hover:scale-110" 
+            className="w-9 h-9 lg:w-12 lg:h-12 object-contain drop-shadow-2xl hover:shadow-2xl hover:scale-110"
           />
         </button>
 
@@ -119,13 +151,13 @@ export default function ProjectPage() {
           <img 
             src={isOverviewHovered ? overviewHoverBtn : overviewBtn} 
             alt="overview" 
-            className="w-12 h-12 md:w-14 md:h-14 lg:w-18 lg:h-18 object-contain drop-shadow-2xl hover:scale-110" 
+            className="w-9 h-9 lg:w-12 lg:h-12 object-contain drop-shadow-2xl hover:shadow-2xl hover:scale-110"
           />
         </button>
       </div>
 
-      <div className="relative flex w-[95vw] max-w-[1400px] h-[82vh] z-30">
-        <div className="absolute left-0 w-[50%] h-full page-base rounded-l-2xl p-4 md:p-5 lg:p-6">
+      <div className="relative flex w-[85vw] max-w-[1100px] h-[80vh] z-30">
+        <div className="absolute left-0 top-20 md:top-0 w-[50%] h-80vh md:h-full page-base rounded-l-2xl p-4 md:p-2 lg:p-4">
           {currentSpread[0] ? (
             <ProjectCard 
               project={currentSpread[0]} 
@@ -136,7 +168,7 @@ export default function ProjectPage() {
           )}
         </div>
 
-        <div className="absolute right-0 w-[49.9%] h-full page-base rounded-r-2xl p-4 md:p-5 lg:p-6">
+        <div className="absolute right-0 top-20 md:top-0 w-[49.9%] h-80vh md:h-full page-base rounded-r-2xl p-4 md:p-2 lg:p-4">
           {currentSpread[1] ? (
             <ProjectCard 
               project={currentSpread[1]} 
@@ -149,7 +181,7 @@ export default function ProjectPage() {
 
         {isFlipping && (
           <div
-            className={`absolute w-[50%] h-full page-base rounded-2xl p-4 md:p-5 lg:p-6 book-transform-3d z-40 ${
+            className={`absolute w-[50%] top-20 md:top-0 h-80vh md:h-full page-base rounded-2xl p-4 md:p-5 lg:p-6 book-transform-3d z-40 ${
               flipDirection === "next"
                 ? "left-1/2 origin-left book-flip-next"
                 : "left-0 origin-right book-flip-prev"
@@ -178,7 +210,7 @@ export default function ProjectPage() {
         <img 
           src={isArrowLeftHovered ? leftArrowHover : leftArrow} 
           alt="prev" 
-          className="w-12 h-12 md:w-15 md:h-15 lg:w-18 lg:h-18 hover:scale-110" 
+          className="w-10 h-10 lg:w-15 lg:h-15 hover:scale-110"
         />
       </button>
 
@@ -194,7 +226,7 @@ export default function ProjectPage() {
         <img 
           src={isArrowRightHovered ? rightArrowHover : rightArrow} 
           alt="next" 
-          className="w-12 h-12 md:w-15 md:h-15 lg:w-18 lg:h-18 hover:scale-110" 
+          className="w-10 h-10 lg:w-15 lg:h-15 hover:scale-110"
         />
       </button>
 
@@ -209,25 +241,22 @@ export default function ProjectPage() {
           box-shadow: inset 0 0 10px #ffe5e5, 4px 4px 12px rgba(0,0,0,0.1);
         }
 
-        /* Animasi bunga jatuh - STABIL */
         @keyframes fall-smooth {
           0% {
             transform: translateY(-200%) translateX(0) rotate(0deg); 
             opacity: 0;
           }
           1% {
-            /* Pastikan opacity tetap 0 sebentar */
             opacity: 0;
           }
           10% {
-            /* Opacity naik saat bunga masuk ke viewport */
-            opacity: 0.8; 
+            opacity: 0.9; 
           }
           50% {
             transform: translateY(50vh) translateX(var(--horizontal-offset)) rotate(90deg);
           }
-          90% {
-            opacity: 0.2;
+          80%{
+            opacity:0;
           }
           100% {
             transform: translateY(110vh) translateX(0) rotate(180deg);
@@ -253,8 +282,8 @@ const ProjectCard = ({ project, side }) => {
   const [hoveredTools, setHoveredTools] = useState({});
   const [isSeeMoreHovered, setIsSeeMoreHovered] = useState(false);
 
-  const getToolIcon = (tool) => `/src/assets/tools/${tool.toLowerCase()}.png`;
-  const getToolHoverIcon = (tool) => `/src/assets/tools/${tool.toLowerCase()}-hover.png`;
+  const getToolIcon = (tool) => toolsMap[tool]?.icon || `/assets/tools/${tool}.png`;
+  const getToolHoverIcon = (tool) => toolsMap[tool]?.hover || `/assets/tools/${tool}-hover.png`;
 
   const handleToolHover = (tool, isHovered) => {
     setHoveredTools(prev => ({
@@ -264,39 +293,39 @@ const ProjectCard = ({ project, side }) => {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#fffafc] rounded-xl p-1 md:p-1 lg:p-2">
-      <div className="mb-1 md:mb-5">
-        <h1 className="text-[#a4b247] font-bold text-lg md:text-xl lg:text-3xl line-clamp-2 leading-tight">
+    <div className="flex flex-col h-full bg-[#fffafc] rounded-xl p-1">
+      <div className="mb-1 md:mb-3">
+        <h1 className="text-[#a4b247] font-bold text-base md:text-xl line-clamp-2 leading-tight">
           {project.name}
         </h1>
       </div>
 
-      <div className="mb-2 md:mb-5">
+      <div className="mb-0 md:mb-3">
         <img
           src={project.image}
           alt={project.name}
-          className="rounded-xl shadow-md w-full h-240px] md:h-[190px] lg:h-[300px] object-cover transition-all duration-300 transform hover:scale-105"
+          className="rounded-xl shadow-md w-[95%] h-[100px] lg:h-[220px] object-cover transition-all duration-300 transform hover:scale-105"
         />
       </div>
 
-      <div className="mb-1 md:mb-5">
-        <h2 className="text-[#FFA9B9] font-semibold text-xl xl:text-base xl:text-xl mb-2">Description</h2>
-        <div className="h-[60px] md:h-[80px] overflow-y-auto pr-2 custom-scrollbar">
-          <p className="text-gray-600 text-lg lg:text-lg leading-relaxed">
+      <div className="mb-1 flex-grow">
+        <h2 className="text-[#FFA9B9] font-semibold text-base mt-2 md:mt-0 md:text-lg">Description</h2>
+        <div className="h-[60px] md:h-[50px] overflow-y-auto pr-2 custom-scrollbar">
+          <p className="text-gray-600 text-xs md:text-sm leading-relaxed">
             {project.description}
           </p>
         </div>
       </div>
 
-      <div className="mb-0 md:mb-5">
-        <h2 className="text-[#FFA9B9] font-semibold text-xl xl:text-base xl:text-xl mb-1">Tools</h2>
+      <div className="mb-0 md:mb-4">
+        <h2 className="text-[#FFA9B9] font-semibold text-base md:text-xl mb-1">Tools</h2>
         <div className="flex items-center gap-1 md:gap-2 flex-wrap">
           {project.tools.map((tool) => (
             <img
               key={tool}
               src={hoveredTools[tool] ? getToolHoverIcon(tool) : getToolIcon(tool)}
               alt={tool}
-              className="w-12 h-12 md:w-16 md:h-16 transition-all hover:scale-110 duration-300 cursor-pointer"
+              className="w-8 h-8 md:w-12 md:h-12 transition-all hover:scale-110 duration-300 cursor-pointer"
               title={tool}
               onMouseEnter={() => handleToolHover(tool, true)}
               onMouseLeave={() => handleToolHover(tool, false)}
@@ -317,7 +346,7 @@ const ProjectCard = ({ project, side }) => {
           <img 
             src={isSeeMoreHovered ? seeMoreHover : seeMore} 
             alt="See More" 
-            className="w-158 h-8 md:w-184 md:h-18 object-contain" 
+            className="w-200 h-8 md:w-250 md:h-15 object-contain"
           />
         </a>
       </div>

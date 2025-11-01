@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import cityBg from "../../assets/background/Background-2.png";
-import bakery from "../../assets/bakery.png";
-import bunnyIdle from "../../assets/bunny.png";
-import bunnyJump from "../../assets/bunnyJump.png";
-import logo from "../../assets/logo.png";
+import cityBg from "/assets/background/Background-2.png";
+import bakery from "/assets/bakery.png";
+import bunnyIdle from "/assets/bunny.png";
+import bunnyJump from "/assets/bunnyJump.png";
+import logo from "/assets/buttons/logo.png";
 import { ProfileSection } from "../Profile";
-import fallingFlower from "../../assets/flower.png";
+import fallingFlower from "/assets/buttons/flower.png";
 
 export const Home = () => {
   const [isJumping, setIsJumping] = useState(false);
@@ -55,7 +55,7 @@ export const Home = () => {
               left: pos.left,
               animationDelay: pos.delay,
               animationDuration: pos.duration,
-              width: `35px`,
+              width: `25px`,
               opacity: 0, 
               '--horizontal-offset': pos.horizontalOffset,
             }}
@@ -68,39 +68,39 @@ export const Home = () => {
       <img
         src={logo}
         alt="logo"
-        className="absolute top-8 right-8 w-48 hover:scale-105 transition-transform duration-300 z-30"
+        className="hover:scale-110 absolute top-2 right-4 md:top-8 md:right-8 w-24 md:w-40 transition-transform z-30"
       />
       
       <div className="absolute bottom-[50px] left-[5%] flex items-end gap-4">
         <img 
           src={bakery} 
           alt="bakery" 
-          className="w-[500px] hidden md:block" 
+          className="w-[400px] hidden lg:block" 
         />
         <img
           src={isJumping ? bunnyJump : bunnyIdle}
           alt="bunny"
-          className={`w-[150px] transition-all duration-500 ${
+          className={`mx-[150%] md:mx-[250%] lg:ml-0 w-[120px] transition-all duration-500 ${
             isJumping ? "-translate-y-14" : ""
           }`}
         />
       </div>
 
       <div
-        className={`absolute right-[10%] md:right-[10%] top-1/2 flex flex-col gap-4 md:gap-6 transform -translate-y-1/2 transition-all duration-700 z-20 ${
+        className={`absolute -my-8 md:my-0 right-[10%] md:right-[10%] top-1/2 flex flex-col gap-4 md:gap-6 transform -translate-y-1/2 transition-all duration-700 z-20 ${
           showButtons ? "opacity-100" : "opacity-0 translate-y-10"
         }`}
       >
         <button
           onClick={() => handleNavigate("/game")}
-          className="w-[480px] md:w-[700px] lg:w-[1000px] bg-[#f9b9c3] text-[#fff8e8] text-lg md:text-xl lg:text-2xl font-bold py-3 md:py-6 rounded-full border-2 border-[#99805E] shadow-md hover:bg-[#f8a9b6] transition transform hover:scale-105"
+          className="w-100 h-12 md:w-150 md:h-13 lg:w-180 lg:h-15 bg-[#f9b9c3] text-[#fff8e8] text-base md:text-lg lg:text-xl font-bold py-2 md:py-2 lg:py-4 rounded-full border-2 border-[#99805E] shadow-md hover:bg-[#f8a9b6] transition transform hover:scale-105"
         >
           Play Mini Game
         </button>
 
         <button
           onClick={() => handleNavigate("/projects")}
-          className="w-[480px] md:w-[700px] lg:w-[1000px] bg-[#fff3b2] text-[#f8a9b6] text-lg md:text-xl lg:text-2xl font-bold py-3 md:py-6 rounded-full border-2 border-[#99805E] shadow-md hover:bg-[#fff0a2] transition transform hover:scale-105"
+          className="w-100 h-12 md:w-150 md:h-13 lg:w-180 lg:h-15 bg-[#fff3b2] text-[#f8a9b6] text-base md:text-lg lg:text-xl font-bold py-2 md:py-2 lg:py-4 rounded-full border-2 border-[#99805E] shadow-md hover:bg-[#fff0a2] transition transform hover:scale-105"
         >
           See Project
         </button>
@@ -116,13 +116,13 @@ export const Home = () => {
             opacity: 0;
           }
           10% {
-            opacity: 0.8; 
+            opacity: 0.9; 
           }
           50% {
             transform: translateY(50vh) translateX(var(--horizontal-offset)) rotate(90deg);
           }
-          90% {
-            opacity: 0.2;
+          80%{
+            opacity:0;
           }
           100% {
             transform: translateY(110vh) translateX(0) rotate(180deg);

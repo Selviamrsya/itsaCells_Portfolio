@@ -1,23 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import flowerImg from "../../assets/flower.png";
-import bunny1 from "../../assets/bunny1.png";
-import bunny2 from "../../assets/bunny2.png";
-import bunny3 from "../../assets/bunny3.png";
-import bunny4 from "../../assets/bunny4.png";
-import bunny5 from "../../assets/bunny5.png";
-import bunny6 from "../../assets/bunny6.png";
-import bunnyIdle from "../../assets/bunny.png";
-import bunnyJump from "../../assets/bunnyJump.png";
-import backBtn from "../../assets/close-button.png";
-import backBtnHover from "../../assets/close-hover.png";
-import tutorialBtn from "../../assets/tutorial-button.png";
-import tutorialBtnHover from "../../assets/tutorial-hover.png"; 
-import startBtn from "../../assets/start-button.png";
-import startBtnHover from "../../assets/start-hover.png"; 
-import closeBtn from "../../assets/close-button.png";
-import closeBtnHover from "../../assets/close-hover.png"; 
-import bgGame from "../../assets/background/Background-2.png";
+import flowerImg from "/assets/buttons/flower.png";
+import bunny1 from "/assets/bunny1.png";
+import bunny2 from "/assets/bunny2.png";
+import bunny3 from "/assets/bunny3.png";
+import bunny4 from "/assets/bunny4.png";
+import bunny5 from "/assets/bunny5.png";
+import bunny6 from "/assets/bunny6.png";
+import bunnyIdle from "/assets/bunny.png";
+import bunnyJump from "/assets/bunnyJump.png";
+import backBtn from "/assets/buttons/close-button.png";
+import backBtnHover from "/assets/buttons/close-hover.png";
+import tutorialBtn from "/assets/buttons/tutorial-button.png";
+import tutorialBtnHover from "/assets/buttons/tutorial-hover.png"; 
+import startBtn from "/assets/buttons/start-button.png";
+import startBtnHover from "/assets/buttons/start-hover.png"; 
+import closeBtn from "/assets/buttons/close-button.png";
+import closeBtnHover from "/assets/buttons/close-hover.png"; 
+import bgGame from "/assets/background/Background-2.png";
 
 const Game = () => {
   const navigate = useNavigate();
@@ -47,7 +47,6 @@ const Game = () => {
   
   const bunnyFrames = [bunny1, bunny2, bunny3, bunny4, bunny5, bunny6];
 
-  //bunga random
   useEffect(() => {
     if (gamePhase !== 'playing') return;
     const spawn = setInterval(() => {
@@ -257,7 +256,7 @@ const Game = () => {
         <img 
           src={isBackHovered ? backBtnHover : backBtn}
           alt="back" 
-          className="w-18 h-18 hover:scale-105 drop-shadow-lg" 
+          className="w-12 h-12 md:w-15 md:h-15 hover:scale-105 drop-shadow-lg" 
         />
       </button>
 
@@ -299,7 +298,7 @@ const Game = () => {
       )}
 
       {gamePhase === 'intro' && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 z-40 gap-1">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 z-40 gap-0 md:gap-4">
           <button
             onClick={() => setShowTutorial(true)}
             onMouseEnter={() => setIsTutorialHovered(true)}
@@ -308,7 +307,7 @@ const Game = () => {
             <img 
               src={isTutorialHovered ? tutorialBtnHover : tutorialBtn} 
               alt="tutorial" 
-              className="h-30 w-170 object-contain"
+              className="h-20 w-100 md:h-25 md:w-200 object-contain"
             />
           </button>
           
@@ -320,7 +319,7 @@ const Game = () => {
             <img 
               src={isStartHovered ? startBtnHover : startBtn} 
               alt="start" 
-              className="h-30 w-170 object-contain"
+              className="h-20 w-100 md:h-25 md:w-200 object-contain"
             />
           </button>
         </div>
@@ -328,33 +327,33 @@ const Game = () => {
 
       {showTutorial && (
         <div className="absolute inset-0 flex items-center justify-center z-50">
-          <div className="bg-[#ffffff] backdrop-blur-sm p-12 rounded-2xl text-center w-[600px] border-3 border-[#99805E] shadow-2xl relative">
+          <div className="bg-[#ffffff] backdrop-blur-sm p-6 md:p-12 rounded-2xl text-center w-[400px] md:w-[600px] border-3 border-[#99805E] shadow-2xl relative">
             <button
               onClick={() => setShowTutorial(false)}
               onMouseEnter={() => setIsCloseHovered(true)}
               onMouseLeave={() => setIsCloseHovered(false)}
-              className="absolute -top-8 -right-8"
+              className="absolute -top-6 md:-top-8 -right-6 md:-right-8"
             >
               <img 
                 src={isCloseHovered ? closeBtnHover : closeBtn} 
                 alt="close" 
-                className="h-18 w-18 hover:scale-110 object-contain"
+                className="w-12 h-12 md:h-15 md:w-15 hover:scale-110 object-contain"
               />
             </button>
             
-            <h2 className="text-5xl font-bold mb-10 text-[#f790b1]">How to Play</h2>
+            <h2 className="text-xl md:text-3xl font-bold mb-5 text-[#f790b1]">How to Play</h2>
             
-            <div className="text-left space-y-6 text-[#99805E] text-2xl">
+            <div className="text-left space-y-6 text-[#99805E] text-sm md:text-lg">
               <p className="flex items-center">
-                <span className="text-2xl mr-4">1. </span>
+                <span className="text-sm md:text-lg mr-4">1. </span>
                 Use <span className="font-bold mx-2">← →</span> arrow keys to move left and right
               </p>
               <p className="flex items-center">
-                <span className="text-2xl mr-4">2. </span>
+                <span className="text-sm md:text-lg mr-4">2. </span>
                 Press <span className="font-bold mx-2">Space</span> or <span className="font-bold mx-2">↑</span> to jump
               </p>
               <p className="flex items-center">
-                <span className="text-2xl mr-4">3. </span>
+                <span className="text-sm md:text-lg mr-4">3. </span>
                 Catch as many falling flowers as you can!
               </p>
                 <center>Enjoy your Game ^0^ !!!</center>
