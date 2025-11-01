@@ -27,7 +27,7 @@ export const ProfileSection = () => {
       >
         <div className="relative flex items-center space-x-2">
           <div className="relative flex-shrink-0">
-            <div className="relative w-15 h-15 md:w-18 md:h-18 rounded-2xl overflow-hidden border-2 border-[#99805E] hover:scale-105 transition-transform duration-300">
+            <div className="relative w-15 h-15 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-[#99805E] hover:scale-105 transition-transform duration-300">
               <img
                 src={profilePic}
                 alt="profile"
@@ -46,10 +46,10 @@ export const ProfileSection = () => {
                   <img
                     src={flowerIcon2}
                     alt="flower"
-                    className="w-4 md:w-5 h-4 md:h-5 mr-1 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+                    className="w-4 md:w-9 h-4 md:h-9 mr-1 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
                   />
                 </div>
-                <span className="font-bold text-[#FFFCF7] text-xs md:text-sm tracking-wide truncate">
+                <span className="font-bold text-[#FFFCF7] text-sm md:text-base tracking-wide truncate">
                   About Itsacells
                 </span>
               </div>
@@ -63,10 +63,10 @@ export const ProfileSection = () => {
                   <img
                     src={flowerIcon}
                     alt="flower"
-                    className="w-4 md:w-5 h-4 md:h-5 mr-2 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12"
+                    className="w-4 md:w-9 h-4 md:h-9 mr-2 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12"
                   />
                 </div>
-                <span className="font-bold text-[#FFFCF7] text-xs md:text-sm tracking-wide">
+                <span className="font-bold text-[#FFFCF7] text-sm md:text-base tracking-wide">
                   {date}
                 </span>
               </div>
