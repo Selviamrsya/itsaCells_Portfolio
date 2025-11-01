@@ -106,7 +106,7 @@ export const aboutData = {
     {
       icon: githubImg,
       hoverIcon: githubHover,
-      text: "selvia-marsya",
+      text: "Selviamrsya",
       link: "https://github.com/Selviamrsya",
     },
     {
