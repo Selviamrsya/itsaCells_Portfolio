@@ -68,14 +68,14 @@ export const Home = () => {
       <img
         src={logo}
         alt="logo"
-        className="hover:scale-110 absolute top-2 right-4 md:top-8 md:right-8 w-24 md:w-40 transition-transform z-30"
+        className="hover:scale-110 absolute top-2 right-4 md:top-4 md:right-6 w-24 md:w-32 transition-transform z-30"
       />
       
       <div className="absolute bottom-[50px] left-[5%] flex items-end gap-4">
         <img 
           src={bakery} 
           alt="bakery" 
-          className="w-[400px] hidden lg:block" 
+          className="w-[200px] hidden lg:block" 
         />
         <img
           src={isJumping ? bunnyJump : bunnyIdle}
@@ -93,14 +93,14 @@ export const Home = () => {
       >
         <button
           onClick={() => handleNavigate("/game")}
-          className="w-100 h-12 lg:w-180 lg:h-15 bg-[#f9b9c3] text-[#fff8e8] text-base md:text-lg lg:text-xl font-bold py-2 md:py-2 lg:py-4 rounded-full border-2 border-[#99805E] shadow-md hover:bg-[#f8a9b6] transition transform hover:scale-105"
+          className="w-100 h-12 lg:w-150 lg:h-12 bg-[#f9b9c3] text-[#fff8e8] text-base md:text-lg lg:text-xl font-bold py-2 md:py-2 lg:py-4 rounded-full border-2 border-[#99805E] shadow-md hover:bg-[#f8a9b6] transition transform hover:scale-105"
         >
           Play Mini Game
         </button>
 
         <button
           onClick={() => handleNavigate("/projects")}
-          className="w-100 h-12 lg:w-180 lg:h-15 bg-[#fff3b2] text-[#f8a9b6] text-base md:text-lg lg:text-xl font-bold py-2 md:py-2 lg:py-4 rounded-full border-2 border-[#99805E] shadow-md hover:bg-[#fff0a2] transition transform hover:scale-105"
+          className="w-100 h-12 lg:w-150 lg:h-12 bg-[#fff3b2] text-[#f8a9b6] text-base md:text-lg lg:text-xl font-bold py-2 md:py-2 lg:py-4 rounded-full border-2 border-[#99805E] shadow-md hover:bg-[#fff0a2] transition transform hover:scale-105"
         >
           See Project
         </button>
