@@ -307,7 +307,7 @@ const Game = () => {
             <img 
               src={isTutorialHovered ? tutorialBtnHover : tutorialBtn} 
               alt="tutorial" 
-              className="h-20 w-100 md:h-25 md:w-200 object-contain"
+              className="h-20 w-100 md:h-20 md:w-150 object-contain"
             />
           </button>
           
@@ -319,7 +319,7 @@ const Game = () => {
             <img 
               src={isStartHovered ? startBtnHover : startBtn} 
               alt="start" 
-              className="h-20 w-100 md:h-25 md:w-200 object-contain"
+              className="h-20 w-100 md:h-20 md:w-150 object-contain"
             />
           </button>
         </div>
