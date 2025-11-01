@@ -54,7 +54,7 @@ export default function About() {
               left: pos.left,
               animationDelay: pos.delay,
               animationDuration: pos.duration,
-              width: "25px",
+              width: "30px",
               opacity: 0,
               "--horizontal-offset": pos.horizontalOffset,
             }}
